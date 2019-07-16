@@ -1,0 +1,5 @@
+name: StoneCutterDamager
+main: com.technerder.stonecutterdamager.StonCutterDamagerPlugin
+version: 1.0
+api-version: 1.14
+author: Technerder
