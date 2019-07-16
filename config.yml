@@ -2,7 +2,7 @@ Damage-Players: true # Whether or not to damage players
 Damage-Entities: false # Whether or not to damage all entities (Can cause lag)
 Destroy-Items: true # Whether or not to destroy items on top of stone cutters
 
-Damage-Delay: 10 # Amount of time between the player being damaged (In Ticks)
+Damage-Delay: 0.5 # Amount of time between the player being damaged (In seconds)
 Damage-Amount: 0.5 # Amount of damage a player should take while on top of stone cutter (In Hearts)
 
 Death-Message: '%player_name% stood on a stone cutter for too long!'

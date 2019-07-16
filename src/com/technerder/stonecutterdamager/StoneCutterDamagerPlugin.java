@@ -13,11 +13,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class StonCutterDamagerPlugin extends JavaPlugin implements Listener {
+public class StoneCutterDamagerPlugin extends JavaPlugin implements Listener {
 
-	private int damageDelay;
-	private double damageAmount;
 	private String stoneCutterDeathMessage;
+	private double damageAmount, damageDelay;
 	private boolean shouldDamagePlayers, shouldDamageEntities, shouldDestroyItems;
 
 	public void onEnable() {
@@ -29,7 +28,7 @@ public class StonCutterDamagerPlugin extends JavaPlugin implements Listener {
 	public void loadConfigValues() {
 		saveDefaultConfig();
 		FileConfiguration config = getConfig();
-		damageDelay = config.getInt("Damage-Delay");
+		damageDelay = config.getDouble("Damage-Delay");
 		damageAmount = config.getDouble("Damage-Amount");
 		shouldDestroyItems = config.getBoolean("Destroy-Items");
 		shouldDamagePlayers = config.getBoolean("Damage-Players");
@@ -76,7 +75,7 @@ public class StonCutterDamagerPlugin extends JavaPlugin implements Listener {
 					});
 				});
 			}
-		}, 0, damageDelay);
+		}, 0, (int) damageDelay * 20);
 	}
 
 	@EventHandler
